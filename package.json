@@ -1,0 +1,19 @@
+{
+  "name": "femboy-helper-js",
+  "version": "1.0.0",
+  "description": "A cute Discord bot with femboy-themed commands",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["discord", "bot", "femboy", "javascript"],
+  "author": "",
+  "license": "MIT"
+}
