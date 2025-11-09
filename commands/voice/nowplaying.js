@@ -1,0 +1,47 @@
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+
+module.exports = {
+  data: new SlashCommandBuilder()
+    .setName('nowplaying')
+    .setDescription('Show information about the currently playing song 🎵'),
+
+  async execute(interaction) {
+    // Check if user is in a voice channel
+    const voiceChannel = interaction.member.voice.channel;
+    if (!voiceChannel) {
+      const embed = new EmbedBuilder()
+        .setTitle('🦊 Oopsie! 🦊')
+        .setDescription('You need to be in a voice channel to see what\'s playing, cutie! 💕')
+        .setColor(0xff69b4);
+      return await interaction.reply({ embeds: [embed], ephemeral: true });
+    }
+
+    // Check if bot is in the same voice channel
+    const botVoiceChannel = interaction.guild.members.me.voice.channel;
+    if (!botVoiceChannel || botVoiceChannel.id !== voiceChannel.id) {
+      const embed = new EmbedBuilder()
+        .setTitle('🦊 Not Playing Music 🦊')
+        .setDescription('I\'m not playing any music right now! 💔')
+        .setColor(0xff69b4);
+      return await interaction.reply({ embeds: [embed], ephemeral: true });
+    }
+
+    // In a real implementation, this would show actual current song info
+    const embed = new EmbedBuilder()
+      .setTitle('🎵 Now Playing 🎵')
+      .setDescription('**Sample Song**\nby Sample Artist')
+      .addFields(
+        { name: 'Duration', value: '3:45 / 4:20', inline: true },
+        { name: 'Requested by', value: 'SampleUser', inline: true },
+        { name: 'Volume', value: '50%', inline: true },
+        { name: 'Loop', value: 'Off', inline: true },
+        { name: 'Shuffle', value: 'Off', inline: true }
+      )
+      .setColor(0xff69b4)
+      .setFooter({ text: 'Femboy Helper Music Player 💖' });
+
+    await interaction.reply({ embeds: [embed] });
+  },
+
+  aliases: ['np', 'current'],
+};

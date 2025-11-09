@@ -34,7 +34,13 @@ function getPrefix(guildId) {
 
 // Function to check if maintenance mode is enabled
 function isMaintenanceMode() {
-  return maintenance.enabled;
+  // Reload maintenance state from file to ensure it's current
+  try {
+    const currentMaintenance = JSON.parse(fs.readFileSync(maintenancePath, 'utf8'));
+    return currentMaintenance.enabled;
+  } catch (error) {
+    return false;
+  }
 }
 
 const client = new Client({
@@ -78,14 +84,15 @@ client.once('ready', async () => {
 
   // Set initial presence based on maintenance mode
   if (isMaintenanceMode()) {
+    const currentMaintenance = JSON.parse(fs.readFileSync(maintenancePath, 'utf8'));
     await client.user.setPresence({
       activities: [{
-        name: `🔧 Maintenance: ${maintenance.reason}`,
+        name: `🔧 Maintenance: ${currentMaintenance.reason}`,
         type: 0,
       }],
       status: 'dnd'
     });
-    console.log(`🔧 Maintenance mode active: ${maintenance.reason}`);
+    console.log(`🔧 Maintenance mode active: ${currentMaintenance.reason}`);
   } else {
     await client.user.setPresence({
       activities: [{
@@ -264,12 +271,13 @@ client.on('interactionCreate', async interaction => {
 
     // Check maintenance mode for non-owner users
     if (isMaintenanceMode() && interaction.user.id !== process.env.OWNER_ID) {
+      const currentMaintenance = JSON.parse(fs.readFileSync(maintenancePath, 'utf8'));
       const { EmbedBuilder } = require('discord.js');
       const embed = new EmbedBuilder()
         .setTitle('🔧 Bot Under Maintenance 🔧')
         .setDescription('The bot is currently under maintenance. Only the bot owner can use commands right now.')
         .addFields(
-          { name: 'Reason', value: maintenance.reason || 'Scheduled maintenance', inline: true },
+          { name: 'Reason', value: currentMaintenance.reason || 'Scheduled maintenance', inline: true },
           { name: 'Status', value: '🛠️ Under Maintenance', inline: true }
         )
         .setColor(0xffa500)
@@ -325,12 +333,13 @@ client.on('messageCreate', async message => {
 
   // Check maintenance mode for non-owner users
   if (isMaintenanceMode() && message.author.id !== process.env.OWNER_ID) {
+    const currentMaintenance = JSON.parse(fs.readFileSync(maintenancePath, 'utf8'));
     const { EmbedBuilder } = require('discord.js');
     const embed = new EmbedBuilder()
       .setTitle('🔧 Bot Under Maintenance 🔧')
       .setDescription('The bot is currently under maintenance. Only the bot owner can use commands right now.')
       .addFields(
-        { name: 'Reason', value: maintenance.reason || 'Scheduled maintenance', inline: true },
+        { name: 'Reason', value: currentMaintenance.reason || 'Scheduled maintenance', inline: true },
         { name: 'Status', value: '🛠️ Under Maintenance', inline: true }
       )
       .setColor(0xffa500)

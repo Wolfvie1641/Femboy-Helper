@@ -39,6 +39,18 @@ module.exports = {
         ],
         prefix: '`!ping`, `!help`, `!afk reason`, `!setprefix newprefix`, `!resetprefix`'
       },
+      voice: {
+        name: '🎵 Voice Commands',
+        description: 'Music and voice channel controls!',
+        commands: [
+          '`/play query` - Play music from URL or search',
+          '`/skip` - Skip the current song',
+          '`/stop` - Stop music and clear queue',
+          '`/queue` - Show current music queue',
+          '`/nowplaying` - Show current song info'
+        ],
+        prefix: '`!play query`, `!skip`, `!stop`, `!queue`, `!nowplaying`'
+      },
         master: {
           name: '👑 Master Commands',
           description: 'Bot owner controls (Owner only)!',
@@ -60,6 +72,7 @@ module.exports = {
         { label: '🎉 Fun Commands', value: 'fun', description: 'Cute interaction commands' },
         { label: '🛡️ Moderation Commands', value: 'moderation', description: 'Server management tools' },
         { label: '🔧 Utility Commands', value: 'utility', description: 'Helpful utilities' },
+        { label: '🎵 Voice Commands', value: 'voice', description: 'Music and voice controls' },
         { label: '👑 Master Commands', value: 'master', description: 'Bot owner controls' }
       );
 
