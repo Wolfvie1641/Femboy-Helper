@@ -492,11 +492,22 @@ client.on('messageCreate', async message => {
 
   const userId = message.author.id;
 
-  // Auto-remove AFK status when user sends a message
+  // Auto-remove AFK status when user sends a message (only if channel is not ignored)
   const afkCommand = client.commands.get('afk');
-  if (afkCommand && afkCommand.afkUsers && afkCommand.afkUsers.has(userId)) {
+  if (afkCommand && afkCommand.afkUsers && afkCommand.afkUsers.has(userId) && !afkCommand.afkIgnoredChannels.has(message.channel.id)) {
     const afkData = afkCommand.afkUsers.get(userId);
     afkCommand.afkUsers.delete(userId);
+
+    // Save the updated AFK users to file
+    const fs = require('fs');
+    const path = require('path');
+    const afkUsersPath = path.join(__dirname, 'afk_users.json');
+    try {
+      const data = Object.fromEntries(afkCommand.afkUsers);
+      fs.writeFileSync(afkUsersPath, JSON.stringify(data, null, 2));
+    } catch (error) {
+      console.error('Error saving AFK users:', error);
+    }
 
     const { EmbedBuilder } = require('discord.js');
     const embed = new EmbedBuilder()
