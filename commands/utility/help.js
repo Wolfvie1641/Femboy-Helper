@@ -16,17 +16,19 @@ module.exports = {
           ],
           prefix: '`!hug @user`, `!kiss @user`, `!ai message`'
         },
-      moderation: {
-        name: '🛡️ Moderation Commands',
-        description: 'Keep your server safe and organized!',
-        commands: [
-          '`/kick @user reason` - Kick a naughty user',
-          '`/ban @user reason` - Ban a user from the server',
-          '`/mute @user duration reason` - Timeout a user (1-40320 minutes)',
-          '`/purge amount filter` - Delete messages from channel'
-        ],
-        prefix: '`!kick @user reason`, `!ban @user reason`, `!mute @user duration reason`, `!purge amount filter`'
-      },
+        moderation: {
+          name: '🛡️ Moderation Commands',
+          description: 'Keep your server safe and organized!',
+          commands: [
+            '`/kick @user reason` - Kick a naughty user',
+            '`/ban @user reason` - Ban a user from the server',
+            '`/mute @user duration reason` - Timeout a user (1-40320 minutes)',
+            '`/purge amount filter` - Delete messages from channel',
+            '`/lock channel reason` - Lock a channel to prevent messages',
+            '`/unlock channel` - Unlock a channel to allow messages'
+          ],
+          prefix: '`!kick @user reason`, `!ban @user reason`, `!mute @user duration reason`, `!purge amount filter`, `!lock channel reason`, `!unlock channel`'
+        },
       utility: {
         name: '🔧 Utility Commands',
         description: 'Helpful tools and information!',

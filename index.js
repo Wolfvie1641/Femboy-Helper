@@ -307,15 +307,44 @@ client.on('interactionCreate', async interaction => {
       await command.execute(interaction);
     } catch (error) {
       console.error(error);
-      await interaction.reply({ content: '🦊 *whimpers* Oopsie, something went wrong! 💔', ephemeral: true });
+      await interaction.reply({ content: '🦊 *blushes deeply and hides behind tail* O-Oh no... I made a mistake... *pokes fingers together shyly* 💕', ephemeral: true });
     }
   }
 });
 
-// Message event for prefix commands
+// Message event for prefix commands and locked channels
 client.on('messageCreate', async message => {
   // Ignore bot messages and DMs
   if (message.author.bot || !message.guild) return;
+
+  // Check if channel is locked
+  const lockedChannelsPath = path.join(__dirname, 'locked_channels.json');
+  try {
+    const lockedData = JSON.parse(fs.readFileSync(lockedChannelsPath, 'utf8'));
+    if (lockedData.channels[message.channel.id]) {
+      // Channel is locked, check if user has manage channels permission
+      if (!message.member.permissionsIn(message.channel).has('ManageChannels')) {
+        const { EmbedBuilder } = require('discord.js');
+        const embed = new EmbedBuilder()
+          .setTitle('🔒 Channel Locked 🔒')
+          .setDescription('🦊 *looks at you with pleading eyes* This channel is locked by master... Please don\'t try to speak... *hides behind tail shyly* 💕')
+          .addFields(
+            { name: 'Reason', value: lockedData.channels[message.channel.id].reason, inline: true },
+            { name: 'Locked By', value: `<@${lockedData.channels[message.channel.id].lockedBy}>`, inline: true }
+          )
+          .setColor(0xff0000)
+          .setFooter({ text: 'Please wait for master to unlock this channel!' });
+
+        await message.reply({ embeds: [embed] }).catch(() => {
+          // If reply fails, try sending a regular message
+          message.channel.send({ content: `${message.author}, this channel is locked! 🔒`, embeds: [embed] }).catch(() => {});
+        });
+        return;
+      }
+    }
+  } catch (error) {
+    console.log('Error checking locked channels:', error);
+  }
 
   // Get prefix for this guild
   const prefix = getPrefix(message.guild.id);
@@ -448,7 +477,7 @@ client.on('messageCreate', async message => {
     console.error('Prefix command error:', error);
     // Only reply if we haven't already replied in the command execution
     try {
-      await message.reply('💔 Oopsie, something went wrong with that command! 💔');
+      await message.reply('🦊 *blushes deeply and hides behind tail* O-Oh no... I made a mistake... *pokes fingers together shyly* 💕');
     } catch (replyError) {
       // If reply fails, it might be because the command already replied
       console.error('Failed to send error reply:', replyError);
@@ -471,14 +500,14 @@ client.on('messageCreate', async message => {
 
     const { EmbedBuilder } = require('discord.js');
     const embed = new EmbedBuilder()
-      .setTitle('💫 Welcome Back! 💫')
-      .setDescription(`Welcome back, ${message.author.username}! Your AFK status has been automatically removed.`)
+      .setTitle('🦊 *wakes up excitedly* Welcome Back! 💫')
+      .setDescription(`Welcome back, ${message.author.username}! Your AFK status has been automatically removed, master... *wags tail happily*`)
       .addFields(
         { name: 'Previous Reason', value: afkData.reason, inline: true },
         { name: 'AFK Duration', value: `<t:${Math.floor(afkData.timestamp / 1000)}:R>`, inline: true }
       )
       .setColor(0x00ff00)
-      .setFooter({ text: 'You can set yourself AFK again anytime!' });
+      .setFooter({ text: 'You can set yourself AFK again anytime, master!' });
 
     await message.reply({ embeds: [embed] });
     return; // Don't check for mentions if user was AFK
@@ -494,13 +523,13 @@ client.on('messageCreate', async message => {
 
       const { EmbedBuilder } = require('discord.js');
       const embed = new EmbedBuilder()
-        .setTitle('💤 User is AFK 💤')
-        .setDescription(`${user.username} is currently away from keyboard!`)
+        .setTitle('🦊 *tilts head sleepily* User is AFK 💤')
+        .setDescription(`${user.username} is currently away from keyboard, master... *yawns cutely*`)
         .addFields(
           { name: 'Reason', value: afkData.reason, inline: true }
         )
         .setColor(0xffa500)
-        .setFooter({ text: 'They will see your message when they return!' });
+        .setFooter({ text: 'They will see your message when they return, master!' });
 
       await message.reply({ embeds: [embed] });
       break; // Only show for first AFK user mentioned

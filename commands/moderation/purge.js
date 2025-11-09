@@ -27,7 +27,7 @@ module.exports = {
     // Check if user has manage messages permission
     if (!interaction.member.permissions.has(PermissionFlagsBits.ManageMessages)) {
       return await interaction.reply({
-        content: '💔 You need Manage Messages permission to use this command! 💔',
+        content: '🦊 *looks at master with pleading eyes* P-Please... I can\'t let you do that without permission... *blushes and hides behind tail* 💕',
         ephemeral: true
       });
     }
@@ -35,7 +35,7 @@ module.exports = {
     // Check if bot has manage messages permission
     if (!interaction.guild.members.me.permissions.has(PermissionFlagsBits.ManageMessages)) {
       return await interaction.reply({
-        content: '💔 I need Manage Messages permission to delete messages! 💔',
+        content: '🦊 *whimpers softly* I-I can\'t delete messages, master... I don\'t have permission... *hides behind you* 💕',
         ephemeral: true
       });
     }
@@ -69,11 +69,11 @@ module.exports = {
 
       // Send confirmation
       const responses = [
-        `🧹 Successfully deleted ${deletedMessages.size} messages! 🧹`,
-        `💨 Poof! ${deletedMessages.size} messages have been cleaned up! 💨`,
-        `🗑️ Deleted ${deletedMessages.size} messages from the channel! 🗑️`,
-        `✨ Channel cleaned! Removed ${deletedMessages.size} messages. ✨`,
-        `🧽 Scrubbed ${deletedMessages.size} messages away! 🧽`
+        `🦊 *cleans up the channel shyly* T-There... I've deleted ${deletedMessages.size} messages for you, master... *blushes deeply* 💕`,
+        `🦊 *looks up with sparkling eyes* All clean now! I removed ${deletedMessages.size} messages... Did I do good? *wags tail* 💕`,
+        `🦊 *bows respectfully* I've cleaned up ${deletedMessages.size} messages, master... I hope this makes you happy... *smiles shyly* 💕`,
+        `🦊 *fidgets nervously* I-I deleted ${deletedMessages.size} messages... Please don't be mad at me... *pokes fingers together* 💕`,
+        `🦊 *tilts head curiously* The channel is clean now! ${deletedMessages.size} messages gone... *looks hopeful* 💕`
       ];
 
       const randomResponse = responses[Math.floor(Math.random() * responses.length)];
@@ -84,11 +84,11 @@ module.exports = {
 
       // Handle specific errors
       if (error.code === 50013) {
-        await interaction.editReply('💔 I don\'t have permission to delete messages in this channel! 💔');
+        await interaction.editReply('🦊 *looks down sadly* I-I don\'t have permission to delete messages here, master... I\'m sorry... *whimpers* 💔');
       } else if (error.code === 50034) {
-        await interaction.editReply('💔 Cannot delete messages older than 2 weeks! 💔');
+        await interaction.editReply('🦊 *tilts head confused* I can\'t delete messages that are too old, master... They\'re older than 2 weeks... *fidgets nervously* 💔');
       } else {
-        await interaction.editReply('💔 Failed to delete messages! Please try again. 💔');
+        await interaction.editReply('🦊 *looks worried* Something went wrong while cleaning up... Please try again, master... *pokes fingers together* 💔');
       }
     }
   },

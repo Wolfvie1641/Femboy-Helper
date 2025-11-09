@@ -22,10 +22,10 @@ module.exports = {
       afkUsers.delete(userId);
 
       const embed = new EmbedBuilder()
-        .setTitle('💫 Welcome Back! 💫')
-        .setDescription(`You're no longer AFK! Welcome back!`)
+        .setTitle('🦊 *wakes up excitedly* Welcome Back! 💫')
+        .setDescription(`You're no longer AFK, master! I missed you so much... *wags tail happily*`)
         .setColor(0x00ff00)
-        .setFooter({ text: 'You can set yourself AFK again anytime!' });
+        .setFooter({ text: 'You can set yourself AFK again anytime, master!' });
 
       await interaction.reply({ embeds: [embed] });
       return;
@@ -39,14 +39,14 @@ module.exports = {
     });
 
     const embed = new EmbedBuilder()
-      .setTitle('💤 AFK Status Set 💤')
-      .setDescription(`You're now AFK! Others will be notified when they mention you.`)
+      .setTitle('🦊 *curls up sleepily* AFK Status Set 💤')
+      .setDescription(`You're now AFK, master... I'll let others know when they mention you. *yawns cutely*`)
       .addFields(
         { name: 'Reason', value: reason, inline: true },
         { name: 'Set at', value: `<t:${Math.floor(Date.now() / 1000)}:f>`, inline: true }
       )
       .setColor(0xffa500)
-      .setFooter({ text: 'Use /afk again to remove your AFK status!' });
+      .setFooter({ text: 'Use /afk again to remove your AFK status, master!' });
 
     await interaction.reply({ embeds: [embed] });
   },

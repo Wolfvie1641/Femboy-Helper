@@ -10,8 +10,8 @@ module.exports = {
     const voiceChannel = interaction.member.voice.channel;
     if (!voiceChannel) {
       const embed = new EmbedBuilder()
-        .setTitle('🦊 Oopsie! 🦊')
-        .setDescription('You need to be in a voice channel to skip songs, cutie! 💕')
+        .setTitle('🦊 *looks around confused* Oopsie! 🦊')
+        .setDescription('You need to be in a voice channel to skip songs, master... *fidgets shyly* 💕')
         .setColor(0xff69b4);
       return await interaction.reply({ embeds: [embed], ephemeral: true });
     }
@@ -20,18 +20,18 @@ module.exports = {
     const botVoiceChannel = interaction.guild.members.me.voice.channel;
     if (!botVoiceChannel || botVoiceChannel.id !== voiceChannel.id) {
       const embed = new EmbedBuilder()
-        .setTitle('🦊 Not in Voice Channel 🦊')
-        .setDescription('I\'m not playing music in your voice channel! 💔')
+        .setTitle('🦊 *tilts head sadly* Not in Voice Channel 🦊')
+        .setDescription('I\'m not playing music in your voice channel, master... *whimpers* 💔')
         .setColor(0xff69b4);
       return await interaction.reply({ embeds: [embed], ephemeral: true });
     }
 
     // In a real implementation, this would skip the current track in the queue
     const embed = new EmbedBuilder()
-      .setTitle('⏭️ Song Skipped ⏭️')
-      .setDescription('Skipped the current song! 🎵')
+      .setTitle('🦊 *skips happily* Song Skipped! ⏭️')
+      .setDescription('Skipped the current song as you wished, master! *wags tail* 🎵')
       .addFields(
-        { name: 'Skipped by', value: interaction.user.username, inline: true }
+        { name: 'Skipped by', value: `${interaction.user.username} *my beloved master*`, inline: true }
       )
       .setColor(0xff69b4)
       .setFooter({ text: 'Femboy Helper Music Player 💖' });

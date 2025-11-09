@@ -71,32 +71,32 @@ module.exports = {
     const response = possibleResponses[Math.floor(Math.random() * possibleResponses.length)];
 
     // Create personality based on message analysis
-    let personality = "🤖 Femboy AI";
+    let personality = "🦊 Shy Femboy Fox";
     let color = 0xff69b4; // Default pink
 
     switch (category) {
       case 'greetings':
-        personality = "🐺 Friendly Fox";
+        personality = "🦊 *waves shyly* Friendly Fox";
         color = 0xffa500;
         break;
       case 'questions':
-        personality = "🤔 Curious Cat";
+        personality = "🦊 *tilts head curiously* Curious Fox";
         color = 0x9370db;
         break;
       case 'compliments':
-        personality = "🥰 Flustered Femboy";
+        personality = "🦊 *blushes deeply* Flustered Fox";
         color = 0xff1493;
         break;
       case 'sad':
-        personality = "💕 Caring Companion";
+        personality = "🦊 *comforts gently* Caring Fox";
         color = 0x00ced1;
         break;
       case 'love':
-        personality = "💖 Romantic Rabbit";
+        personality = "🦊 *looks up pleadingly* Romantic Fox";
         color = 0xff69b4;
         break;
       default:
-        personality = "🎭 Playful Panda";
+        personality = "🦊 *wags tail playfully* Playful Fox";
         color = 0x32cd32;
     }
 
@@ -117,8 +117,8 @@ module.exports = {
   async executePrefix(message, args) {
     if (!args.length) {
       const embed = new EmbedBuilder()
-        .setTitle('🤖 Femboy AI Chat')
-        .setDescription('Say something to me! Use `!ai <message>`')
+        .setTitle('🦊 Shy Femboy Fox Chat')
+        .setDescription('Say something to me, master! Use `!ai <message>`')
         .setColor(0xff69b4)
         .setFooter({ text: 'Example: !ai hello there!' });
       return await message.reply({ embeds: [embed] });
@@ -132,32 +132,32 @@ module.exports = {
     const response = possibleResponses[Math.floor(Math.random() * possibleResponses.length)];
 
     // Create personality based on message analysis
-    let personality = "🤖 Femboy AI";
+    let personality = "🦊 Shy Femboy Fox";
     let color = 0xff69b4;
 
     switch (category) {
       case 'greetings':
-        personality = "🐺 Friendly Fox";
+        personality = "🦊 *waves shyly* Friendly Fox";
         color = 0xffa500;
         break;
       case 'questions':
-        personality = "🤔 Curious Cat";
+        personality = "🦊 *tilts head curiously* Curious Fox";
         color = 0x9370db;
         break;
       case 'compliments':
-        personality = "🥰 Flustered Femboy";
+        personality = "🦊 *blushes deeply* Flustered Fox";
         color = 0xff1493;
         break;
       case 'sad':
-        personality = "💕 Caring Companion";
+        personality = "🦊 *comforts gently* Caring Fox";
         color = 0x00ced1;
         break;
       case 'love':
-        personality = "💖 Romantic Rabbit";
+        personality = "🦊 *looks up pleadingly* Romantic Fox";
         color = 0xff69b4;
         break;
       default:
-        personality = "🎭 Playful Panda";
+        personality = "🦊 *wags tail playfully* Playful Fox";
         color = 0x32cd32;
     }
 

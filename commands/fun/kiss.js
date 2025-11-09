@@ -14,33 +14,33 @@ module.exports = {
     // Check if user is kissing themselves
     if (user.id === interaction.user.id) {
       const selfKissResponses = [
-        `💋 ${interaction.user.username} gives themselves a gentle self-kiss! 💋`,
-        `😘 ${interaction.user.username} blows themselves a kiss uwu~ 😘`,
-        `💖 ${interaction.user.username} kisses their own reflection! 💖`,
-        `🌸 ${interaction.user.username} gives the most tender self-kiss! 🌸`,
-        `😚 ${interaction.user.username} pecks themselves softly! 😚`
+        `🦊 *kisses my own paw shyly* M-Master... your kisses are so much better... *blushes furiously* 💕`,
+        `🦊 *blows a kiss to myself* I wish this was from you, master... *looks away sadly* 💕`,
+        `🦊 *pecks my own cheek* Your lips would feel so much softer, master... *whimpers* 💕`,
+        `🦊 *kisses my reflection* I need your kisses more than anything... *tears up* 💕`,
+        `🦊 *touches my lips* Please kiss me, master... I need it... *fidgets nervously* 💕`
       ];
       const randomResponse = selfKissResponses[Math.floor(Math.random() * selfKissResponses.length)];
       return await interaction.reply(randomResponse);
     }
 
     const responses = [
-      `🦊 *kisses ${user.username} softly with my fox lips* Yip~ Mwah! 💋`,
-      `🦊 *plants a gentle kiss on ${user.username}'s cheek* You're so adorable, darling! 💖`,
-      `🦊 *gives ${user.username} a sweet peck* Sweet as candy from my foxy kisses! 🍬`,
-      `🦊 ${interaction.user.username} gives ${user.username} a sweet femboy fox kiss! 💋`,
-      `🦊 ${interaction.user.username} plants a gentle kiss on ${user.username}'s lips uwu~ with my tail swishing 😘`,
-      `🦊 ${interaction.user.username} kisses ${user.username} so tenderly with my soft fox muzzle! 💖`,
-      `🦊 ${interaction.user.username} gives ${user.username} a cute, feminine fox kiss! 🌸`,
-      `🦊 ${interaction.user.username} pecks ${user.username} softly on the cheek with my ears perked! 😚`,
-      `🦊 ${interaction.user.username} blows ${user.username} a loving kiss with my fluffy tail! 💕`,
-      `🦊 ${interaction.user.username} gives ${user.username} a delicate femboy fox kiss! 🌺`,
-      `🦊 ${interaction.user.username} kisses ${user.username} with my soft, gentle fox lips! 💓`,
-      `🦊 *licks ${user.username}'s cheek like a loving fox* Yip~ kisses! 🦊`,
-      `🦊 *kisses ${user.username} with foxy charm and tail wags* Yip~ so sweet! 🦊`,
-      `🦊 *rubs against ${user.username} and gives kisses* Yip~ fox kisses! 🦊`,
-      `🦊 *nibbles ${user.username}'s nose gently with my fox snout* Bunny fox kisses! 🦊`,
-      `🦊 *gives ${user.username} a fox's gentle kiss* Rawr~ but loving with my tail! 🦊`
+      `🦊 *kisses ${user.username} passionately* M-Master... your lips taste so good... *blushes deeply* 💕`,
+      `🦊 *plants a deep kiss on ${user.username}'s lips* I can't get enough of you, master... *whimpers softly* 💕`,
+      `🦊 *pecks ${user.username}'s cheek lovingly* Your kisses make me melt... *looks up pleadingly* 💕`,
+      `🦊 *kisses ${user.username} with tongue* Please... more, master... *fidgets nervously* 💕`,
+      `🦊 *sucks on ${user.username}'s neck* You taste amazing... *moans softly* 💕`,
+      `🦊 *french kisses ${user.username} deeply* I love you so much, master... *tears up* 💕`,
+      `🦊 *licks ${user.username}'s lips* Your mouth is mine... *giggles shyly* 💕`,
+      `🦊 *bites ${user.username}'s lower lip* You're driving me crazy, master... *blushes furiously* 💕`,
+      `🦊 *kisses ${user.username}'s forehead tenderly* I need your love... *whispers* 💕`,
+      `🦊 *makes out with ${user.username} intensely* Don't stop... please... *clings tightly* 💕`,
+      `🦊 *kisses ${user.username}'s collarbone* Your skin is so soft... *inhales deeply* 💕`,
+      `🦊 *swirls tongue with ${user.username}* This feels so right... *sighs contentedly* 💕`,
+      `🦊 *pecks ${user.username}'s nose* You're adorable, master... *smiles sweetly* 💕`,
+      `🦊 *deep kisses ${user.username} passionately* I belong to you... *looks up with sparkling eyes* 💕`,
+      `🦊 *smooches ${user.username} repeatedly* Your kisses are addictive... *wags tail* 💕`,
+      `🦊 *kisses ${user.username} all over* I can't resist you, master... *melts in your arms* 💕`
     ];
 
     const randomResponse = responses[Math.floor(Math.random() * responses.length)];

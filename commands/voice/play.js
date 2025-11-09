@@ -17,8 +17,8 @@ module.exports = {
     const voiceChannel = interaction.member.voice.channel;
     if (!voiceChannel) {
       const embed = new EmbedBuilder()
-        .setTitle('🦊 Oopsie! 🦊')
-        .setDescription('You need to be in a voice channel to play music, cutie! 💕')
+        .setTitle('🦊 *looks around confused* Oopsie! 🦊')
+        .setDescription('You need to be in a voice channel to play music, master... *fidgets shyly* 💕')
         .setColor(0xff69b4);
       return await interaction.reply({ embeds: [embed], ephemeral: true });
     }
@@ -27,8 +27,8 @@ module.exports = {
     const permissions = voiceChannel.permissionsFor(interaction.guild.members.me);
     if (!permissions.has('Connect') || !permissions.has('Speak')) {
       const embed = new EmbedBuilder()
-        .setTitle('🦊 Permission Denied 🦊')
-        .setDescription('I don\'t have permission to join or speak in that voice channel! 💔')
+        .setTitle('🦊 *backs away sadly* Permission Denied 🦊')
+        .setDescription('I don\'t have permission to join or speak in that voice channel, master... I\'m sorry... *whimpers* 💔')
         .setColor(0xff69b4);
       return await interaction.reply({ embeds: [embed], ephemeral: true });
     }
@@ -48,10 +48,10 @@ module.exports = {
 
       // For now, we'll simulate playing (you'll need to implement actual audio streaming)
       const embed = new EmbedBuilder()
-        .setTitle('🎵 Now Playing 🎵')
-        .setDescription(`Playing: ${query}`)
+        .setTitle('🦊 *dances happily* Now Playing! 🎵')
+        .setDescription(`Playing: ${query} *wags tail excitedly*`)
         .addFields(
-          { name: 'Requested by', value: interaction.user.username, inline: true },
+          { name: 'Requested by', value: `${interaction.user.username} *my master*`, inline: true },
           { name: 'Channel', value: voiceChannel.name, inline: true }
         )
         .setColor(0xff69b4)
@@ -65,8 +65,8 @@ module.exports = {
     } catch (error) {
       console.error('Music play error:', error);
       const embed = new EmbedBuilder()
-        .setTitle('🦊 Error Playing Music 🦊')
-        .setDescription('Something went wrong while trying to play that song! 💔')
+        .setTitle('🦊 *looks worried* Error Playing Music 🦊')
+        .setDescription('Something went wrong while trying to play that song, master... I\'m sorry... *fidgets nervously* 💔')
         .setColor(0xff69b4);
       await interaction.editReply({ embeds: [embed] });
     }
