@@ -1,0 +1,49 @@
+{
+  "greetings": [
+    "Hewwo! 💖 *waves paw*",
+    "Awoo~ Hello there! 🐺",
+    "Hi cutie! *blushes* 💕",
+    "Greetings, my dear! 🦊",
+    "Hello! *tail wags* 🐾"
+  ],
+  "questions": [
+    "Hmm... that's an interesting question! 🤔",
+    "Let me think about that... 💭",
+    "Ooh, good question! I'm not sure though... 😅",
+    "That's something to ponder! 🤨",
+    "I'm still learning about that! 📚"
+  ],
+  "compliments": [
+    "Aww, thank you! You're so sweet! 💕",
+    "*blushes deeply* You're making me flustered! 🥰",
+    "That's so kind of you to say! 💖",
+    "You're too nice! *hugs* 🤗",
+    "Ehehe~ You're making me all warm inside! 🔥"
+  ],
+  "sad": [
+    "Aww, don't be sad! *comforts you* 💕",
+    "I'm here for you! What's wrong? 🥺",
+    "Cheer up! Things will get better! 🌈",
+    "*gives you a big hug* Everything will be okay! 🤗",
+    "Don't worry, I'm here! 💖"
+  ],
+  "love": [
+    "Love is such a beautiful thing! 💕",
+    "*blushes* Love makes everything better! 🥰",
+    "Aww, talking about love? How sweet! 💖",
+    "Love is magical! ✨",
+    "I love hearing about love stories! 📖"
+  ],
+  "default": [
+    "That's interesting! Tell me more! 🤔",
+    "Mmm, I see! 🐾",
+    "Oh really? That's cool! 😊",
+    "I like hearing about that! 💕",
+    "Sounds fun! 🎉",
+    "That's adorable! 🥰",
+    "Wow, that's amazing! ✨",
+    "I never thought about it that way! 💭",
+    "You're so creative! 🎨",
+    "That's making me smile! 😊"
+  ]
+}

@@ -25,17 +25,22 @@ module.exports = {
     }
 
     const responses = [
-      `💖 *hugs ${user.username} tightly* UwU, you're so cuddly! 💖`,
-      `🤗 *wraps arms around ${user.username}* Big squishy hug for you! 💕`,
-      `🫂 *gives ${user.username} a gentle hug* Feel the love! 💞`,
-      `💕 ${interaction.user.username} gives ${user.username} a big warm femboy hug! 💕`,
-      `🤗 ${interaction.user.username} squeezes ${user.username} tightly uwu~ 🤗`,
-      `💖 ${interaction.user.username} wraps ${user.username} in a loving femboy embrace! 💖`,
-      `🌸 ${interaction.user.username} hugs ${user.username} so gently and cutely! 🌸`,
-      `😘 ${interaction.user.username} gives ${user.username} the most adorable femboy hug! 😘`,
-      `💋 ${interaction.user.username} cuddles ${user.username} like a soft pillow! 💋`,
-      `🌺 ${interaction.user.username} gives ${user.username} a sweet, feminine hug! 🌺`,
-      `💓 ${interaction.user.username} holds ${user.username} close with delicate arms! 💓`
+      `🦊 *nuzzles ${user.username} with my fluffy fox tail* Yip~ you're so warm! 🦊`,
+      `🦊 *wraps my foxy arms around ${user.username}* Big squishy hug for you, darling! 💕`,
+      `🦊 *gives ${user.username} a gentle fox hug* Feel the love from my soft fur! 💞`,
+      `🦊 ${interaction.user.username} gives ${user.username} a big warm femboy fox hug! 💕`,
+      `🦊 ${interaction.user.username} squeezes ${user.username} tightly with my tails uwu~ 🦊`,
+      `🦊 ${interaction.user.username} wraps ${user.username} in a loving femboy fox embrace! 💖`,
+      `🦊 ${interaction.user.username} hugs ${user.username} so gently and cutely with my ears twitching! 🌸`,
+      `🦊 ${interaction.user.username} gives ${user.username} the most adorable femboy fox hug! 😘`,
+      `🦊 ${interaction.user.username} cuddles ${user.username} like a soft fox pillow! 💋`,
+      `🦊 ${interaction.user.username} gives ${user.username} a sweet, feminine fox hug! 🌺`,
+      `🦊 ${interaction.user.username} holds ${user.username} close with my delicate fox paws! 💓`,
+      `🦊 *nuzzles ${user.username} like a cute femboy fox* Yip~ so cuddly! 🦊`,
+      `🦊 *hugs ${user.username} with my fluffy tails wrapping around* Foxy cuddles! 🦊`,
+      `🦊 *purrs while hugging ${user.username}* Yip~ so soft and warm! 🦊`,
+      `🦊 *fox hops into ${user.username}'s arms* Hoppity fox hug! 🦊`,
+      `🦊 *fox cuddles ${user.username} gently* Rawr~ but softly with my tail! 🦊`
     ];
 
     const randomResponse = responses[Math.floor(Math.random() * responses.length)];

@@ -1,6 +1,6 @@
-# Femboy Helper JS 💖
+# 🐺 Femboy Helper JS 💖
 
-A cute Discord bot built with JavaScript and discord.js, featuring femboy-themed responses and organized command categories!
+A cute and furry Discord bot built with JavaScript and discord.js, featuring femboy-themed responses and organized command categories! Awoo~!
 
 ## Features
 
@@ -18,10 +18,12 @@ A cute Discord bot built with JavaScript and discord.js, featuring femboy-themed
 4. Click "Add Bot" to create your bot
 5. Under "Token", click "Copy" to get your bot token (keep this secret!)
 
-### 2. Get Your Discord User ID
+### 2. Get Your Bot Client ID and User ID
 1. In Discord, go to User Settings → Advanced
 2. Enable "Developer Mode"
-3. Right-click your username in any server and select "Copy User ID"
+3. Right-click your username in any server and select "Copy User ID" (this is your OWNER_ID)
+4. In the Developer Portal, go to your bot's "General Information" section
+5. Copy the "Application ID" (this is your CLIENT_ID)
 
 ### 3. Invite the Bot to Your Server
 1. In the Developer Portal, go to "OAuth2" → "URL Generator"
