@@ -33,11 +33,12 @@ module.exports = {
         commands: [
           '`/ping` - Check bot latency',
           '`/help` - Show this help menu',
+          '`/version` - Check bot version info',
           '`/afk reason` - Set yourself as AFK',
           '`/setprefix newprefix` - Change server prefix (Admin)',
           '`/resetprefix` - Reset prefix to ! (Admin)'
         ],
-        prefix: '`!ping`, `!help`, `!afk reason`, `!setprefix newprefix`, `!resetprefix`'
+        prefix: '`!ping`, `!help`, `!version`, `!afk reason`, `!setprefix newprefix`, `!resetprefix`'
       },
       voice: {
         name: '🎵 Voice Commands',
@@ -58,9 +59,10 @@ module.exports = {
             '`/shutdown` - Shut down the bot gracefully',
             '`/reload` - Reload all commands (Aliases: update, upd)',
             '`/diagnose` - Check bot health and scan for errors',
-            '`/maintenance` - Toggle maintenance mode'
+            '`/maintenance` - Toggle maintenance mode',
+            '`/upload` - Upload new bot version'
           ],
-          prefix: '`!shutdown`, `!reload` (!update, !upd), `!diagnose`, `!maintenance`'
+          prefix: '`!shutdown`, `!reload` (!update, !upd), `!diagnose`, `!maintenance`, `!upload`'
         }
     };
 

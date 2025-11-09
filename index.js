@@ -166,6 +166,22 @@ client.on('interactionCreate', async interaction => {
         return await maintenanceCommand.handleModal(interaction);
       }
     }
+
+    // Handle upload modal submissions
+    if (interaction.customId.startsWith('upload_')) {
+      const uploadCommand = client.commands.get('upload');
+      if (uploadCommand && uploadCommand.handleModal) {
+        return await uploadCommand.handleModal(interaction);
+      }
+    }
+
+    // Handle upload button interactions
+    if (interaction.customId.startsWith('upload_')) {
+      const uploadCommand = client.commands.get('upload');
+      if (uploadCommand && uploadCommand.handleButton) {
+        return await uploadCommand.handleButton(interaction);
+      }
+    }
   }
 
   if (interaction.isStringSelectMenu()) {
